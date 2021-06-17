@@ -1,0 +1,11 @@
+[package]
+name = "c_bindings"
+version = "0.1.0"
+authors = ["Federico Morrone <contact@morrone.dev>"]
+edition = "2018"
+
+[build-dependencies]
+cbindgen = "0.19.0"
+
+[lib]
+crate-type = ["cdylib"]

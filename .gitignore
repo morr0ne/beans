@@ -1,0 +1,16 @@
+# Cargo build directory
+/target
+
+# Temporary directories
+/temp
+/tmp
+
+# Ignore napi build artifacts
+*.node
+
+# Yarn related stuff
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/cache

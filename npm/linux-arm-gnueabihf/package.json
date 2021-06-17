@@ -1,0 +1,18 @@
+{
+  "name": "beans-linux-arm-gnueabihf",
+  "version": "0.1.0",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm"
+  ],
+  "main": "beans.linux-arm-gnueabihf.node",
+  "files": [
+    "beans.linux-arm-gnueabihf.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "beans",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "napi": {
+    "name": "beans",
+    "triples": {
+      "additional": [
+        "aarch64-apple-darwin",
+        "aarch64-linux-android",
+        "aarch64-unknown-linux-gnu",
+        "armv7-unknown-linux-gnueabihf",
+        "x86_64-unknown-linux-musl"
+      ]
+    }
+  },
+  "dependencies": {
+    "@node-rs/helper": "^1.2.0"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^1.1.0",
+    "@types/node": "^15.12.2",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "build": "napi build --platform --release --cargo-name nodejs_bindings --cargo-flags=\"-p nodejs_bindings\"",
+    "build:debug": "napi build --platform --cargo-name nodejs_bindings --cargo-flags=\"-p nodejs_bindings\""
+  }
+}

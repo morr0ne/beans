@@ -1,0 +1,10 @@
+[package]
+name = "dart-bindings"
+version = "0.1.0"
+authors = ["Federico Morrone <contact@morrone.dev>"]
+edition = "2018"
+
+[dependencies]
+
+[lib]
+crate-type = ["cdylib"]

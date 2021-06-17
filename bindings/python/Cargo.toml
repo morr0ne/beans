@@ -1,0 +1,11 @@
+[package]
+name = "python_bindings"
+version = "0.1.0"
+authors = ["Federico Morrone <contact@morrone.dev>"]
+edition = "2018"
+
+[dependencies]
+pyo3 = { version = "0.13.2", features = ["abi3", "abi3-py36", "extension-module"] }
+
+[lib]
+crate-type = ["cdylib"]

@@ -1,0 +1,18 @@
+{
+  "name": "beans-linux-x64-gnu",
+  "version": "0.1.0",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "beans.linux-x64-gnu.node",
+  "files": [
+    "beans.linux-x64-gnu.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
