@@ -6,8 +6,11 @@ edition = "2018"
 
 [dependencies]
 beans = { path = "../../" }
+futures = "0.3.15"
 napi = { version = "1.7.5", features = ["napi4", "serde-json", "tokio_rt"] }
 napi-derive = "1.1.0"
+
+# tokio = { version = "1", features = ["full"] }
 
 [build-dependencies]
 napi-build = "1.1.0"

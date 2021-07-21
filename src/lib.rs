@@ -1,24 +1,10 @@
 use anyhow::Result;
-use indexmap::IndexMap;
-use reqwest::IntoUrl;
-use serde::{de::DeserializeOwned, Deserialize, Serialize};
-use url::Url;
-use uuid::Uuid;
+use reqwest::{IntoUrl, Method};
+use serde::de::DeserializeOwned;
+use types::{GetResponse, UuidResponse};
 
-pub type HttpClient = reqwest::blocking::Client;
-
-#[derive(Debug, Deserialize, Serialize)]
-pub struct GetResponse {
-    pub args: IndexMap<String, String>,
-    pub headers: IndexMap<String, String>,
-    pub origin: String,
-    pub url: Url,
-}
-
-#[derive(Debug, Deserialize, Serialize)]
-pub struct UuidResponse {
-    pub uuid: Uuid,
-}
+pub mod types;
+pub use types::HttpClient;
 
 pub struct Client {
     http_client: HttpClient,
@@ -30,16 +16,28 @@ impl Client {
         Client { http_client }
     }
 
-    fn get_json<T: DeserializeOwned>(&self, url: impl IntoUrl) -> Result<T> {
-        Ok(self.http_client.get(url).send()?.json()?)
+    pub async fn request_json<T: DeserializeOwned>(
+        &self,
+        method: Method,
+        url: impl IntoUrl,
+    ) -> Result<T> {
+        Ok(self
+            .http_client
+            .request(method, url)
+            .send()
+            .await?
+            .json()
+            .await?)
     }
 
-    pub fn get(&self) -> Result<GetResponse> {
-        self.get_json("https://httpbin.org/get")
+    pub async fn get(&self) -> Result<GetResponse> {
+        self.request_json(Method::GET, "https://httpbin.org/get")
+            .await
     }
 
-    pub fn uuid(&self) -> Result<UuidResponse> {
-        self.get_json("https://httpbin.org/uuid")
+    pub async fn uuid(&self) -> Result<UuidResponse> {
+        self.request_json(Method::GET, "https://httpbin.org/uuid")
+            .await
     }
 }
 

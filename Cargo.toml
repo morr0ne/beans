@@ -11,13 +11,16 @@ license = "Apache-2.0/MIT"
 [dependencies]
 anyhow = "1.0.42"
 indexmap = { version = "1.6.2", features = ["serde"] }
-reqwest = { version = "0.11.4", features = ["blocking", "json"] }
+reqwest = { version = "0.11.4", features = ["json"] }
 serde = { version = "1.0.126", features = ["derive"] }
 url = { version = "2.2.2", features = ["serde"] }
 uuid = { version = "0.8.2", features = ["serde"] }
 
-# [dev-dependencies]
-# tokio = { version = "1.6.2", features = ["full"] }
+[dev-dependencies]
+tokio = { version = "1.8.2", features = ["full"] }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [profile.release]
 lto = true
@@ -25,6 +28,8 @@ codegen-units = 1
 incremental = false
 # opt-level = "z"
 # strip = true
+
+
 
 [[example]]
 name = "simple"
