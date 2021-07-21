@@ -39,8 +39,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@napi-rs/cli", "npm:1.1.0"],
             ["@node-rs/helper", "npm:1.2.0"],
-            ["@types/node", "npm:15.12.2"],
-            ["typescript", "patch:typescript@npm%3A4.3.2#builtin<compat/typescript>::version=4.3.2&hash=ddfc1b"]
+            ["@types/node", "npm:16.4.0"],
+            ["typescript", "patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=ddfc1b"]
           ],
           "linkType": "SOFT",
         }]
@@ -345,6 +345,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:15.12.2"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:16.4.0", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.4.0-179e15102b-3f2aaccbe8.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:16.4.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["ansi-escapes", [
@@ -392,8 +399,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["beans", "workspace:."],
             ["@napi-rs/cli", "npm:1.1.0"],
             ["@node-rs/helper", "npm:1.2.0"],
-            ["@types/node", "npm:15.12.2"],
-            ["typescript", "patch:typescript@npm%3A4.3.2#builtin<compat/typescript>::version=4.3.2&hash=ddfc1b"]
+            ["@types/node", "npm:16.4.0"],
+            ["typescript", "patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=ddfc1b"]
           ],
           "linkType": "SOFT",
         }]
@@ -1241,10 +1248,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A4.3.2#builtin<compat/typescript>::version=4.3.2&hash=ddfc1b", {
-          "packageLocation": "./.yarn/cache/typescript-patch-4490d00053-68d48dc86d.zip/node_modules/typescript/",
+        ["patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=ddfc1b", {
+          "packageLocation": "./.yarn/cache/typescript-patch-aa8fabd973-7f0b8343f7.zip/node_modules/typescript/",
           "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A4.3.2#builtin<compat/typescript>::version=4.3.2&hash=ddfc1b"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=ddfc1b"]
           ],
           "linkType": "HARD",
         }]
