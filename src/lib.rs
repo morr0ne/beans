@@ -42,3 +42,9 @@ impl Client {
         self.get_json("https://httpbin.org/uuid")
     }
 }
+
+impl Default for Client {
+    fn default() -> Self {
+        Self::new()
+    }
+}
